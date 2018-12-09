@@ -1,5 +1,7 @@
 import React from 'react';
 import GroceryItem from './GroceryItem';
+import { connect } from 'react-redux';
+import { strictEqual } from 'assert';
 
 const GroceryList = props => (
   <ul>
@@ -9,4 +11,6 @@ const GroceryList = props => (
   </ul>
 );
 
-export default GroceryList;
+const mapStateToProps = state => ({ groceries: state.groceries });
+
+export default connect(mapStateToProps)(GroceryList);
