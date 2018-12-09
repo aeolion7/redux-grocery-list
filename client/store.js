@@ -1,4 +1,5 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import loggerMiddleware from 'redux-logger';
 
 const ADD_GROCERY = 'ADD_GROCERY';
 
@@ -27,6 +28,6 @@ const groceryReducer = (state = initialState, action) => {
   }
 };
 
-const store = createStore(groceryReducer);
+const store = createStore(groceryReducer, applyMiddleware(loggerMiddleware));
 
 export default store;
