@@ -28,4 +28,5 @@ const groceryReducer = (state = initialState, action) => {
 };
 
 const store = createStore(groceryReducer);
+
 export default store;
